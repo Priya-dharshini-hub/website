@@ -1,0 +1,16 @@
+<html>
+<head>
+<title>MyWeb<\title>
+.myweb{bg color="Drak blue" ;border:5px;}
+<\head>
+<body bg color="blue">
+<div class="myweb"><h1 id="web">Welcome To Our Website<\h1><br><h2>how are you<\h2><br><button onclick="changeText()">click me<\button><\div>
+<script>
+function changeText()
+{
+const text=document.getElementById(web);
+text.innerhtml=Enjoy it's for you😎
+}
+<\script>
+<\body>
+<\html>
