@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <style>
+        .myDiv {
+          border: 5px outset red;
+          background-color: lightblue;
+          text-align: center;
+        }
+        </style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebPage</title>
+</head>
+<body bg color="dark blue">
+    <div class="myDiv"><h1 id="welcomeText">Hello!😊</h1><br><h2>we are glad to see you!😃</h2><button onclick="changeText()">Click me!</button></div>
+    <script>
+        function changeText() {
+            const text = document.getElementById("welcomeText");
+            text.innerHTML = "Enjoy our website😎";
+        }
+    </script>
+</body>
+</html>
