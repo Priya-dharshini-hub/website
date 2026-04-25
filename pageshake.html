@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login</title>
+</head>
+<body style="text-align:center; margin-top:100px;">
+
+  <div id="box" style="display:inline-block; padding:20px; border:2px solid black; position:relative;">
+    <h2>Login</h2>
+    <input type="password" id="pass" placeholder="Enter Password"><br><br>
+    <button onclick="checkPassword()">Login</button>
+  </div>
+
+  <script>
+    function shake(element) {
+      let pos = 0;
+      let interval = setInterval(() => {
+        pos += 5;
+        element.style.left = (pos % 2 === 0 ? -10 : 10) + "px";
+
+        if (pos > 20) {
+          clearInterval(interval);
+          element.style.left = "0px"; // reset
+        }
+      }, 30);
+    }
+    function checkPassword() {
+      let password = document.getElementById("pass").value;
+      let box = document.getElementById("box");
+
+      if (password !== "0609") {
+        shake(box);
+      } else {
+        alert("Login Successful!");
+      }
+    }
+  </script>
+
+</body>
+</html>
