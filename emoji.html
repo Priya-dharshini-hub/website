@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Word Effects</title>
+</head>
+
+<body style="text-align:center; margin-top:50px;">
+
+  <h2>Type words like "rain", "love", "fire" ✨</h2>
+  <input type="text" id="inputBox" placeholder="Type here...">
+
+  <script>
+    let input = document.getElementById("inputBox");
+
+    // word → emoji mapping
+    let effects = {
+      rain: "💧",
+      love: "❤️",
+      fire: "🔥",
+      star: "⭐",
+      //emojis:😀😀😁😋😎🙂😶😏😫😯😏😒😟🤑🥱🤡🥳😡🐱‍👓
+    };
+
+    input.addEventListener("input", function() {
+      let text = input.value.toLowerCase();
+
+      for (let word in effects) {
+        if (text.includes(word)) {
+          startEffect(effects[word]);
+        }
+      }
+    });
+
+    function startEffect(emoji) {
+      for (let i = 0; i < 20; i++) {
+        createDrop(emoji);
+      }
+    }
+
+    function createDrop(emoji) {
+      let drop = document.createElement("div");
+
+      drop.innerHTML = emoji;
+
+      drop.style.position = "fixed";
+      drop.style.top = "0px";
+      drop.style.left = Math.random() * window.innerWidth + "px";
+      drop.style.fontSize = (20 + Math.random() * 20) + "px";
+
+      document.body.appendChild(drop);
+
+      let pos = 0;
+
+      let fall = setInterval(() => {
+        pos += 5;
+        drop.style.top = pos + "px";
+
+        if (pos > window.innerHeight) {
+          clearInterval(fall);
+          drop.remove();
+        }
+      }, 20);
+    }
+  </script>
+
+</body>
+</html>
